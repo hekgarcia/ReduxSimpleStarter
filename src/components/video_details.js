@@ -3,7 +3,10 @@ import React from 'react';
 
 const VideoDetail = ({video}) => {
     
-    if(!video) {
+    // This checking avoids the rendering of this component when the video object is not yet available
+    // because react tries to render instantly. So, it seems that the React component will try to render this markup
+    // until the video prop object is available, this is automatically.
+    if(!video) { 
         return <div>Loading...</div>;
     }
     
